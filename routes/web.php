@@ -16,13 +16,13 @@ use App\Http\Controllers\Auth\AdminLoginController;
 */
 
 
-
+//User Auth
 Auth::routes();
 
+//Home Page
 Route::get('/',[PageController::class,'home']);
+
+//Admin user Auth
 Route::get('admin/login',[AdminLoginController::class,'showLoginForm']);
 Route::post('admin/login',[AdminLoginController::class,'login'])->name('admin.login');
 
-Route::get('/admin',function() {
-    return 'admin page';
-});
